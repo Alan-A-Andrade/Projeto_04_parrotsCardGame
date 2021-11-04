@@ -25,12 +25,12 @@ while(contador< ( qntCartas / 2) ) {
 arrayCartas.push(contador+1);
 arrayCartas.push(contador+1);
 
-contador = contador +1
+contador++
  
 }
 
 //Mistura Array
-14misturar();
+misturar();
 
 
 
@@ -44,14 +44,15 @@ while(contador2<qntCartas){
 let carta;
 carta = `<div class="carta" data-identifier="card"> 
     
-<div class="verso" data-identifier="back-face"></div>
+<div class="verso" data-identifier="back-face">
+</div>
 
-<h1>${arrayCartas[contador2]}</h1>
-
-<div class="frente hidden" data-identifier="front-face"></div>`
+<div class="frente hidden" data-identifier="front-face">
+<img src="./assets/Pictures/parrot_0${arrayCartas[contador2]}.gif">
+</div>`
 
 adicionarCarta(carta);
-contador2 = contador2 +1
+contador2++
 
 }
 

@@ -35,6 +35,11 @@ ul{
 
 }
 
+img{
+width: 100%;
+}
+
+
 .frente{
     
 }
@@ -46,6 +51,10 @@ ul{
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    object-fit: fit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hidden{
