@@ -1,0 +1,31 @@
+html{
+    font-family: 'Roboto';
+    color: #75B79E;
+    background-color: #EEF9BF;
+}
+
+header{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+
+}
+
+.carta{
+    width: 117px;
+    height: 146px;
+    background-color: #A7E9AF;
+    border: 1px solid #99CEA8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-image: url(./assets/front.png) ;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hidden{
+    display: none;
+}
