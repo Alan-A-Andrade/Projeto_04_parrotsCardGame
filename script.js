@@ -47,7 +47,7 @@ carta = `<div class="carta" data-identifier="card">
 <div class="verso" data-identifier="back-face">
 </div>
 
-<div class="frente hidden" data-identifier="front-face">
+<div class="frente" data-identifier="front-face">
 <img src="./assets/Pictures/parrot_0${arrayCartas[contador2]}.gif">
 </div>`
 
@@ -69,5 +69,5 @@ function comparador() {
 
 
 function adicionarCarta(carta) {
-    listaCartas.innerHTML = listaCartas.innerHTML + `<li>${carta}</li>`;
+    listaCartas.innerHTML += `<li>${carta}</li>`;
 }
