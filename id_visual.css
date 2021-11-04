@@ -123,3 +123,11 @@ font-size: 36px;
 }
 
 }
+
+.container{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    }
