@@ -30,7 +30,7 @@ contador = contador +1
 }
 
 //Mistura Array
-misturar();
+14misturar();
 
 
 
