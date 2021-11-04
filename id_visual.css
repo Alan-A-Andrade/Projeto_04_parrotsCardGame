@@ -4,13 +4,39 @@ html{
     background-color: #EEF9BF;
 }
 
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
 header{
+    margin-top: 40px;
+    width: 80vw;
     font-style: normal;
     font-weight: bold;
     font-size: 56px;
     line-height: 66px;
     letter-spacing: -0.004em;
+    text-align: center;
 
+}
+
+.container{
+
+margin-top: 40px;
+padding: 0px 122px;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
 }
 
 
@@ -39,20 +65,22 @@ width: 100%;
 
 
 .frente{
-transform: rotateY(180deg);
-backface-visibility: hidden;
-transition: all .5s;
-transform-style: preserve-3d;
-width: 100%;
-height: 100%;
-background-color: #A7E9AF;
-border: 1px solid #99CEA8;
-box-sizing: border-box;
-border-radius: 5px;
-display: flex;
-flex-wrap: wrap;
-position: absolute;
-top:0px
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all .5s ease-in;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    background-color: #A7E9AF;
+    border: 1px solid #99CEA8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top:0px;
+    padding: 10px;
+    box-shadow: inset 0px 0px 0px 10px white;
 
 }
 
@@ -73,7 +101,7 @@ top:0px
     justify-content: center;
     align-items: center;
     backface-visibility: hidden;
-    transition: all .5s;
+    transition: all .5s ease-in;
     transform-style: preserve-3d;
     position: absolute;
     top:0px
@@ -86,4 +114,12 @@ top:0px
 
 .carta:hover .verso{
     transform: rotateY(-180deg);
+}
+
+@media only screen and (max-width: 400px){
+
+header{
+font-size: 36px;
+}
+
 }
