@@ -19,9 +19,6 @@ while (qntCartas % 2 !== 0 || qntCartas < 4 || qntCartas > 14) {
 
 }
 
-
-
-
 //criar array para identificação de cartas de n(minimo2) até m(maximo14)
 while (contador < (qntCartas / 2)) {
 
@@ -64,7 +61,6 @@ function selecionarCarta(cartaclicada) {
   if (cartaAnterior === null) {
 
     virarcarta(cartaclicada);
-    cartaclicada.classList.add("selecionada");
     qntCartasViradas++;
     cartaAnterior = cartaclicada;
   }
@@ -75,7 +71,6 @@ function selecionarCarta(cartaclicada) {
 
   else {
     virarcarta(cartaclicada);
-    cartaclicada.classList.add("selecionada");
     qntCartasViradas++
     setTimeout(function () {
       acertouCarta(cartaclicada, cartaAnterior)
@@ -127,8 +122,6 @@ function acertouCarta(elemento, elementoAnterior) {
     virarcarta(elementoAnterior);
   }
 
-  elemento.classList.remove("selecionada");
-  elementoAnterior.classList.remove("selecionada");
   cartaAnterior = null;
 
 }
@@ -138,6 +131,12 @@ function checarVitoria() {
   if (qntCartasCorretas == qntCartas) {
 
     alert(`Você ganhou em ${qntCartasViradas} jogadas`)
+
+    let restart = prompt("Recomeçar? (Sim/Não)")
+
+    if (restart == "Sim" || "sim" || "s" || "S") {
+      location.reload(true);
+    }
   }
 
 }
