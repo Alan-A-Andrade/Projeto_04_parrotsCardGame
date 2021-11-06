@@ -130,6 +130,19 @@ font-size: 36px;
     align-items: center;
     }
 
+.timer{
+    width: 90px;
+    font-size: 18px;
+    padding: 2px;
+    height: 25px;
+    background-color: #A7E9AF;
+    border: 1px solid #99CEA8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    text-justify: distribute;
 
-.selecionada{
 }
