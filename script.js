@@ -16,20 +16,16 @@ function cronometro() {
 
 function aumentarTimer() {
   timer++;
-  document.querySelector(".timer").innerHTML = `timer:${timer}s`;
+  document.querySelector(".timer").innerHTML = `Timer: ${timer}s`;
   if (qntCartasCorretas === qntCartas) {
     clearInterval(idInterval);
   }
 }
 
-
-
-
-qntCartas = prompt("quantas cartas?");
-
-while (qntCartas % 2 !== 0 || qntCartas < 4 || qntCartas > 14) {
+do {
   qntCartas = prompt("quantas cartas?");
 }
+while (qntCartas % 2 !== 0 || qntCartas < 4 || qntCartas > 14);
 
 while (contador < (qntCartas / 2)) {
   arrayCartas.push(contador + 1);
@@ -60,7 +56,7 @@ function selecionarCarta(cartaclicada) {
 
   if (cartaAnterior === null) {
 
-    virarcarta(cartaclicada);
+    virarCarta(cartaclicada);
     qntCartasViradas++;
     cartaAnterior = cartaclicada;
   }
@@ -70,10 +66,10 @@ function selecionarCarta(cartaclicada) {
   }
 
   else {
-    virarcarta(cartaclicada);
+    virarCarta(cartaclicada);
     qntCartasViradas++
     setTimeout(function () {
-      acertouCarta(cartaclicada, cartaAnterior)
+      checarPar(cartaclicada, cartaAnterior)
     }, 1000);
   }
 }
@@ -91,14 +87,14 @@ function adicionarCarta(carta) {
   listaCartas.innerHTML += `<li>${carta}</li>`;
 }
 
-function virarcarta(elemento) {
+function virarCarta(elemento) {
   let verso = elemento.querySelector(".verso")
   let frente = elemento.querySelector(".frente")
   verso.classList.toggle("virarverso")
   frente.classList.toggle("virarfrente")
 }
 
-function acertouCarta(elemento, elementoAnterior) {
+function checarPar(elemento, elementoAnterior) {
 
   if (elementoAnterior.innerHTML === elemento.innerHTML) {
 
@@ -110,8 +106,8 @@ function acertouCarta(elemento, elementoAnterior) {
   }
 
   else {
-    virarcarta(elemento);
-    virarcarta(elementoAnterior);
+    virarCarta(elemento);
+    virarCarta(elementoAnterior);
   }
 
   cartaAnterior = null;
@@ -125,8 +121,13 @@ function checarVitoria() {
 
     let restart = prompt("Recomeçar? (Sim/Não)")
 
-    if (restart == "Sim" || "sim" || "s" || "S") {
+    restart = restart.toLowerCase();
+
+    if (restart == "sim" || restart == "s") {
       location.reload(true);
+    }
+    else {
+      clearInterval(idInterval);
     }
   }
 }
