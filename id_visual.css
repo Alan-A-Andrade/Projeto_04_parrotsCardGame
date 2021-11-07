@@ -19,15 +19,13 @@ body{
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
- 
+
 }
+
 
 header{
     width: 80vw;
     margin-top: 40px;
-
-    font-style: normal;
-    font-weight: bold;
     font-size: 56px;
     line-height: 66px;
     letter-spacing: -0.004em;

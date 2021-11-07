@@ -8,7 +8,7 @@ let arrayCartas = [];
 let carta = null;
 let cartaAnterior = null;
 let timer = 0;
-let idInterval;
+let travarClique = false;
 
 function cronometro() {
   idInterval = setInterval(aumentarTimer, 1000);
@@ -40,9 +40,7 @@ cronometro();
 while (contador2 < qntCartas) {
   let carta = `<div onclick="selecionarCarta(this)" class="carta" data-identifier="card"> 
     
-<div class="verso" data-identifier="back-face">
-</div>
-
+<div class="verso" data-identifier="back-face"></div>
 <div class="frente" data-identifier="front-face">
 <img src="./assets/Pictures/parrot_0${arrayCartas[contador2]}.gif">
 </div>`
@@ -53,12 +51,16 @@ while (contador2 < qntCartas) {
 }
 
 function selecionarCarta(cartaclicada) {
+  if (travarClique == true) {
+    return;
+  }
 
-  if (cartaAnterior === null) {
+  else if (cartaAnterior === null) {
 
     virarCarta(cartaclicada);
     qntCartasViradas++;
     cartaAnterior = cartaclicada;
+    travarClique = false;
   }
 
   else if (cartaclicada === cartaAnterior) {
@@ -88,10 +90,12 @@ function adicionarCarta(carta) {
 }
 
 function virarCarta(elemento) {
-  let verso = elemento.querySelector(".verso")
-  let frente = elemento.querySelector(".frente")
-  verso.classList.toggle("virarverso")
-  frente.classList.toggle("virarfrente")
+  travarClique = true;
+  let verso = elemento.querySelector(".verso");
+  let frente = elemento.querySelector(".frente");
+  verso.classList.toggle("virarverso");
+  frente.classList.toggle("virarfrente");
+
 }
 
 function checarPar(elemento, elementoAnterior) {
@@ -109,7 +113,7 @@ function checarPar(elemento, elementoAnterior) {
     virarCarta(elemento);
     virarCarta(elementoAnterior);
   }
-
+  travarClique = false;
   cartaAnterior = null;
 }
 
