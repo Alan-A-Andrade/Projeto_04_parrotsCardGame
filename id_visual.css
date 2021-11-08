@@ -22,7 +22,6 @@ body{
 
 }
 
-
 header{
     width: 80vw;
     margin-top: 40px;
@@ -118,9 +117,6 @@ img{
     backface-visibility: hidden;
     transition: all .5s ease-in;
     transform-style: preserve-3d;
-
-
-
 }
 
 .virarfrente{
@@ -141,7 +137,7 @@ img{
     border-radius: 5px;
     padding: 5px;
 
-    position: fixed;
+    position: absolute;
     top: 10px;
     right: 10px;
 
